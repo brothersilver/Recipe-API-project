@@ -42,9 +42,11 @@ class AuthTokenSerializer(serializers.Serializer):
     """Serializer for the user auth token"""
 
     # def update(self, instance, validated_data):
-    #     print(f'1. update(instance={instance}, validated_data={validated_data})')
+    #     print(f'1. update(instance={instance},
+    #     validated_data={validated_data})')
     #     super().update(instance, validated_data)
-    #     print(f'2. update(instance={instance}, validated_data={validated_data})')
+    #     print(f'2. update(instance={instance},
+    #     validated_data={validated_data})')
     #
     # def create(self, validated_data):
     #     print(f'1. create(validated_data={validated_data})')
