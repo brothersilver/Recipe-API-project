@@ -14,7 +14,7 @@ ME_URL = reverse('user:me')
 
 
 def create_user(**params):
-    """Create and return new user"""
+    """Create and return a new user"""
     return get_user_model().objects.create_user(**params)
 
 
@@ -66,7 +66,7 @@ class PublicUserApiTests(TestCase):
         self.assertFalse(user_exists)
 
     def test_create_token_for_user(self):
-        """Test generates token for valid crendentials"""
+        """Test generates token for valid credentials"""
         user_details = {
             'name': 'Test Name',
             'email': 'test@example.com',
@@ -125,7 +125,7 @@ class PrivateUserApiTests(TestCase):
         self.client = APIClient()
         self.client.force_authenticate(user=self.user)
 
-    def test_retrieve_profile_usccess(self):
+    def test_retrieve_profile_success(self):
         """Test retrieving profile for logged in user"""
         res = self.client.get(ME_URL)
         print(f'result = {res.data}')
@@ -144,7 +144,7 @@ class PrivateUserApiTests(TestCase):
 
     def test_update_user_profile(self):
         """Test updating the user profile for the authenticated user"""
-        payload = {'name': 'Update name', 'password': 'newpassword123'}
+        payload = {'name': 'Updated name', 'password': 'newpassword123'}
 
         res = self.client.patch(ME_URL, payload)
 

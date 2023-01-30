@@ -16,7 +16,7 @@ INGREDIENTS_URL = reverse('recipe:ingredient-list')
 
 
 def detail_url(ingredient_id):
-    """Create nad return an ingredient detail URL"""
+    """Create and return an ingredient detail URL"""
     return reverse('recipe:ingredient-detail', args=[ingredient_id])
 
 
@@ -39,7 +39,7 @@ class PublicIngredientsApiTests(TestCase):
 
 
 class PrivateIngredientsApiTests(TestCase):
-    """Test unauthenticated API requests"""
+    """Test authenticated API requests"""
 
     def setUp(self) -> None:
         self.user = create_user()
