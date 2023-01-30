@@ -24,7 +24,7 @@ class UserAdmin(BaseUserAdmin):
                 )
             }
         ),
-        (_('Important dates'), {'fields': ('last_login',)})
+        (_('Important dates'), {'fields': ('last_login',)}),
     )
     readonly_fields = ['last_login']
     add_fieldsets = (
@@ -38,10 +38,12 @@ class UserAdmin(BaseUserAdmin):
                 'is_active',
                 'is_staff',
                 'is_superuser',
-            )
+            ),
         }),
     )
 
 
 admin.site.register(models.User, UserAdmin)
 admin.site.register(models.Recipe)
+admin.site.register(models.Tag)
+admin.site.register(models.Ingredient)
